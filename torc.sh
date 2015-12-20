@@ -30,7 +30,11 @@ shift $((OPTIND-1))
 
 ## Update repos
 if [[ $repo_update == 1 ]]; then
-    echo "Updating"
+    echo "Updating.."
+    git -C /root/git/torc pull https://github.com/rascal999/torc
+    git -C /root/git/torc-web pull https://github.com/rascal999/torc-web
+    git -C /root/git/torc-tools pull https://github.com/rascal999/torc-tools
+    git -C /root/git/torc-docker pull https://github.com/rascal999/torc-docker
 fi
 
 # run API
