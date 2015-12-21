@@ -43,6 +43,10 @@ if [[ $repo_update == 1 ]]; then
     sleep 1
 fi
 
+# Locale hack for docker instance
+LANG="en_GB.UTF-8"
+export LANG
+
 # run API
 torc &
 
