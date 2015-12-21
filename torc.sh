@@ -30,15 +30,23 @@ shift $((OPTIND-1))
 
 ## Update repos
 if [[ $repo_update == 1 ]]; then
-    echo "Updating.."
+    echo "Updating environment.. (\"torc.sh -n\" if you don't want this)"
     git -C /root/git/torc pull https://github.com/rascal999/torc
     git -C /root/git/torc-web pull https://github.com/rascal999/torc-web
     git -C /root/git/torc-tools pull https://github.com/rascal999/torc-tools
     git -C /root/git/torc-docker pull https://github.com/rascal999/torc-docker
+    echo
+    echo "#################"
+    echo "Finished updating"
+    echo "#################"
+    echo
+    sleep 1
 fi
 
 # run API
 torc &
+
+sleep 2
 
 # run website
 torc-web
