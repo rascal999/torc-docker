@@ -44,7 +44,7 @@ if [[ $repo_update == 1 ]]; then
 fi
 
 # Soft link
-ln -s /root/git/torc-tools/tools/ tools
+ln -s /root/git/torc-tools/tools/ /root/tools
 
 # Locale hack for docker instance
 LANG="en_GB.UTF-8"
